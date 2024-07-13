@@ -8,10 +8,12 @@ export default styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
+        backgroundColor: "#38bdf8"
     },
 
     text: {
         fontSize: 20,
+        fontWeight: "600"
     },
 
     button: {

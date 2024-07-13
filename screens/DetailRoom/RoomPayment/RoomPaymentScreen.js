@@ -186,6 +186,7 @@ function RoomPayment({ route }) {
     const totalElectricUpdate = useMemo(() => {
         if (parseInt(sumElectricBill) < 0 || sumElectricBill === '0'
             || (parseInt(sumElectricBill) * parseFloat(electricPrice)).toString() === 'NaN') {
+            setElectricTotal('0');
             return '0';
         }
         else {
@@ -197,6 +198,7 @@ function RoomPayment({ route }) {
 
     const totalWaterUpdate = useMemo(() => {
         if (parseInt(sumWaterBill) < 0 || sumWaterBill == '0' || (parseInt(sumWaterBill) * parseFloat(waterPrice)).toString() === 'NaN') {
+            setWaterTotal('0');
             return '0';
         }
         else {
@@ -221,7 +223,7 @@ function RoomPayment({ route }) {
         let water = parseFloat(waterTotal);
         let rubbish = parseFloat(rubbishPrice);
         let room = parseFloat(sumRoomBill);
-        if (electric == 0 || water == 0 || room == 0 || totalBill === "NaN") {
+        if (totalBill === "NaN") {
             return '0';
         }
         else {
